@@ -41,9 +41,9 @@ init 3 python in mod:
             'theme': 'Default',
             'themeTransparency': 0.1,
             'codeViewShowAll': True,
-            'progressShown': True,
+            'progressShown': False,
             'progressPosition': None,
-            'progressShowNew': True, 
+            'progressShowNew': False, 
             'notificationTimeout': 0,
             
             'quickmenuEnabled': True,
