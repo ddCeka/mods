@@ -187,7 +187,6 @@ init 3 python in mod:
                 try:
                     with zipfile.ZipFile(fileName, 'r') as zf:
                         jsonStr = zf.read('json')
-                        SettingsClass._m1_settings__id = zf.read('id')
                         urmVersion = zf.read('urmVersion')
                     
                     SettingsClass._m1_settings__globalSettings = json.loads(jsonStr)
@@ -203,7 +202,7 @@ init 3 python in mod:
             try:
                 with zipfile.ZipFile(fileNameNew, 'w', zipfile.ZIP_DEFLATED) as zf:
                     zf.writestr('json', json.dumps(SettingsClass._m1_settings__globalSettings))
-                    if self.id: zf.writestr('id', self.id)
+                    if self.id: zf.writestr(self.id)
                     zf.writestr('urmVersion', version)
                 
                 shutil.move(fileNameNew, fileName)
